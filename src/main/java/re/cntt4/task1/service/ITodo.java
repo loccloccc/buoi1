@@ -7,4 +7,8 @@ import java.util.List;
 public interface ITodo {
     List<Todo> getAll();
     void save(Todo todo);
+
+    Todo findById(Long id);
+
+    void delete(Long id);
 }

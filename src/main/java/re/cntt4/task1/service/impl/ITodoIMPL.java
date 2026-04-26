@@ -22,4 +22,14 @@ public class ITodoIMPL implements ITodo {
     public void save(Todo todo) {
         iTodoRepository.save(todo);
     }
+
+    @Override
+    public Todo findById(Long id) {
+        return iTodoRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void delete(Long id) {
+        iTodoRepository.deleteById(id);
+    }
 }

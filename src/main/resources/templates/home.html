@@ -22,6 +22,7 @@
         <th>dueDue</th>
         <th>status</th>
         <th>priority</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -31,6 +32,10 @@
         <td th:text="${#temporals.format(t.dueDate,'dd/MM/yyyy')}"></td>
         <td th:text="${t.status} ? 'Da hoan thanh' : 'Chua hoan thanh'"></td>
         <td th:text="${t.priority}"></td>
+        <td>
+            <a th:href="@{|/update/${t.id}|}">Sua</a>
+            <a th:href="@{|/delete/${t.id}|}" onclick="return confirm('Ban chac chan muon xoa')">Xoa</a>
+        </td>
     </tr>
     </tbody>
 </table>

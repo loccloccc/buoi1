@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 public class TodoDTO {
+    private Long id;
     @NotBlank(message = "Khong duoc de trong")
     private String content;
 

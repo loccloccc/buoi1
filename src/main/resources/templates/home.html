@@ -12,6 +12,31 @@
 </head>
 <body>
 
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <p class="nav-link" th:text="|#{hello} ${session.name}|"></p>
+            </li>
+
+            <!-- Language dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    <span th:text="#{language}">Language</span>
+                </a>
+
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" th:href="@{/todo(lang='vi')}">Tiếng Việt</a>
+                    <a class="dropdown-item" th:href="@{/todo(lang='en')}">English</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
 <a th:href="@{/add}">ADD TODO</a>
 
 <table class="table">
